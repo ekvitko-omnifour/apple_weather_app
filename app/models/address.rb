@@ -67,4 +67,8 @@ class Address
   def cache_key
     "geocode/#{Digest::MD5.hexdigest(raw_address.downcase.strip)}"
   end
+
+  def normalized_display_slug
+    display_name.parameterize
+  end
 end

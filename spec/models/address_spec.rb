@@ -105,9 +105,14 @@ RSpec.describe Address do
       let(:city) { "Inkerman" }
       let(:state) { "Queensland" }
       let(:country) { "Australia" }
+      let(:expected_display_slug) { "inkerman-queensland-australia" }
 
       it "returns a display name without a zip code" do
         expect(subject.display_name).not_to include(postal_code)
+      end
+
+      it "returns a valid slug" do
+        expect(subject.normalized_display_slug).to eq(expected_display_slug)
       end
     end
   end
