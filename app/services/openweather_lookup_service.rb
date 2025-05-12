@@ -52,7 +52,7 @@ class OpenweatherLookupService
       summary: today["summary"],
       extended_forecasts: daily.map do |day|
         {
-          date: Time.at(day["dt"]).strftime("%A"),
+          date: Time.at(day["dt"]).strftime("%A %m/%d"),
           low: day["temp"]["min"],
           high: day["temp"]["max"],
           condition: day["weather"]&.first&.dig("description"),
