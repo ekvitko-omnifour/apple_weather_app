@@ -1,0 +1,37 @@
+<div class="text-center">
+  <h1 class="text-3xl font-semibold mb-1">
+    <%= @address.display_name %>
+  </h1>
+
+  <p class="text-lg mb-4 text-white/80">
+    <%= @forecast.summary %>
+  </p>
+
+  <div class="text-7xl font-light mb-2">
+    <%= @forecast.temp.round %>°F
+  </div>
+
+  <p class="text-white/70 mb-8">
+    High: <%= @forecast.high %>°, Low: <%= @forecast.low %>°
+  </p>
+
+  <% if @cached %>
+    <p class="text-green-200 text-sm mb-4">(Served from cache)</p>
+  <% end %>
+</div>
+
+<div class="overflow-x-auto mt-10">
+  <ul class="flex gap-6 text-center">
+    <% @forecast.extended_forecasts.each do |day| %>
+      <li class="flex-none bg-white/10 backdrop-blur-md px-4 py-3 rounded-xl min-w-[120px]">
+        <p class="font-semibold mb-1"><%= day[:date] %></p>
+        <p class="text-sm text-white/80"><%= day[:summary] %></p>
+        <p class="mt-2 text-lg"><%= day[:high].round %>° / <%= day[:low].round %>°</p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<p class="text-center mt-10">
+  <%= link_to "Check another location", root_path, class: "underline text-white/90 hover:text-white" %>
+</p>

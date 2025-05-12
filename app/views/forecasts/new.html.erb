@@ -1,0 +1,8 @@
+<h1 class="text-center text-2xl font-semibold mb-6">Enter a Location</h1>
+
+<%= form_with(url: forecast_path, method: :post, local: true, class: "flex flex-col items-center gap-4") do |form| %>
+  <%= form.text_field :address, placeholder: "e.g. Brooklyn, NY", required: true,
+                      class: "w-full max-w-sm px-4 py-2 rounded-lg border-2 border-white/60 bg-white/90 text-center text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-200" %>
+
+  <%= form.submit "Get Forecast", class: "bg-white/90 text-black font-semibold px-6 py-2 rounded-lg hover:bg-white" %>
+<% end %>

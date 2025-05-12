@@ -13,17 +13,15 @@
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+    <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag :app %>
+    <%= stylesheet_link_tag :app %>icon
   </head>
 
-  <body class="bg-gradient-to-b from-blue-500 to-indigo-700 text-white">
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="min-h-screen bg-gradient-to-b from-blue-500 via-sky-400 to-indigo-500 text-white font-sans">
+    <main class="max-w-xl mx-auto px-6 py-10">
       <%= yield %>
     </main>
   </body>
