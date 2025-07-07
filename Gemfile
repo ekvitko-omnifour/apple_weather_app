@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.2"
 gem "propshaft"
 gem "puma", ">= 5.0"
-gem "tailwindcss-rails", "~> 3.3.1"
+gem "tailwindcss-rails", "~> 4.3.0"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
